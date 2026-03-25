@@ -2,18 +2,12 @@
 {% load static %}
 
 {% block title %}AC Repair | Elegant Way Auto Maint{% endblock %}
-
+<meta name="description" content="Professional car AC repair in Dubai. Compressor repair, refrigerant refill, leak detection and full AC diagnostics at Elegant Way Auto Maint.">
 {% block extra_css %}
 <style>
 
 
-:root {
-    --primary: #ff6a00;   
-    --black: #111111;     
-    --dark: #1a1a1a;      
-    --white: #ffffff;
-    --gray: #bbbbbb;
-}
+
 
 /* HERO */
 .service-hero {
@@ -53,7 +47,7 @@
     font-size: 14px;
     color: var(--gray);
     display: flex;
-    justify-content: center;   
+    justify-content: flex-start;   
     align-items: center;
     gap: 8px;   
 }
@@ -246,6 +240,13 @@
         font-size: 32px;
     }
 }
+@media (max-width:768px){
+
+.service-hero{
+height:250px;
+}
+
+}
 
 </style>
 {% endblock %}
@@ -271,7 +272,7 @@
         <div class="service-grid">
 
             <div class="service-content">
-                <h1 class="service-title">Affordable Luxury Car AC Repair Workshop, Dubai</h1>
+                <h2 class="service-title">Affordable Luxury Car AC Repair Workshop, Dubai</h2>
 
                 <div class="service-subtitle">
                     Experience a comfortable journey with a flawless AC system

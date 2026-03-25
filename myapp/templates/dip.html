@@ -6,6 +6,16 @@
 {% block content %}
 <style>
 
+
+:root {
+    --primary: #ff6a00;   
+    --black: #111111;     
+    --dark: #1a1a1a;      
+    --white: #ffffff;
+    --gray: #bbbbbb;
+}
+
+
 .service-hero {
     height: 350px;
     background: url("{% static 'images/dip.png' %}") center/cover no-repeat;
@@ -14,43 +24,57 @@
 
 .hero-overlay {
     height: 100%;
-    background: rgba(0,0,0,0.65);
     display: flex;
     align-items: center;
+    background: rgba(0,0,0,0.65);
 }
 
 .hero-content {
     max-width: 1200px;
     margin: auto;
     padding: 0 20px;
-    color: #fff;
+    color: var(--white);
 }
 
 .hero-content h1 {
+    text-align: center;
     font-size: 42px;
     font-weight: 700;
     margin-bottom: 10px;
+    color: var(--white);
 }
 
 .hero-content p {
+    text-align: center;
     font-size: 18px;
     margin-bottom: 15px;
+    color: var(--gray);
 }
 
 .breadcrumb {
     font-size: 14px;
-    color: #ddd;
+    color: var(--gray);
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    gap: 8px;   
 }
 
 .breadcrumb a {
-    color: #fff;
+    color: var(--gray);
     text-decoration: none;
 }
 
 
+
+
+.breadcrumb a:hover {
+    color: #e3520e;
+}
+
 .service-detail {
     padding: 80px 0;
-    background: #fff;
+    background: var(--black);
 }
 
 .service-container {
@@ -65,17 +89,18 @@
     gap: 50px;
 }
 
-
+/* HEADINGS */
 .service-title {
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 15px;
+    color: var(--white);
 }
 
 .service-subtitle {
     font-size: 18px;
     font-style: italic;
-    color: #666;
+    color: var(--gray);
     margin-bottom: 25px;
 }
 
@@ -83,7 +108,7 @@
 .service-content p {
     font-size: 16px;
     line-height: 1.8;
-    color: #444;
+    color: var(--gray);
     margin-bottom: 18px;
 }
 
@@ -93,19 +118,23 @@
     margin-bottom: 15px;
     border-left: 4px solid var(--primary);
     padding-left: 12px;
-    color: #111;
+    color: var(--white);
 }
+
+
+
 
 
 .service-content ul {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
 }
 
 .service-content ul li {
     position: relative;
-    padding-left: 26px;
+    padding-left: 28px;
     margin-bottom: 12px;
+    color: var(--gray);
 }
 
 .service-content ul li::before {
@@ -117,31 +146,6 @@
 }
 
 
-.service-cta {
-    margin-top: 40px;
-    padding: 30px;
-    background: #f8f8f8;
-    border-left: 4px solid var(--primary);
-    margin-bottom: 50px;
-}
-
-.service-cta h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.service-cta a {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 30px;
-    background: var(--primary);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 6px;
-}
-
-/* RIGHT SIDE */
 .service-image {
     position: sticky;
     top: 120px;
@@ -149,40 +153,44 @@
 
 .service-image img {
     width: 100%;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .image-caption {
     text-align: center;
-    margin: 12px 0 25px;
+    margin-top: 12px;
     font-size: 14px;
-    color: #666;
+    color: var(--gray);
 }
 
-/* QUICK BOX */
-.quick-box {
-    margin-bottom: 30px;
+
+.service-quick-points {
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--dark);
 }
 
-.quick-box h4 {
+.service-quick-points h4 {
     font-size: 20px;
-    margin-bottom: 12px;
-    padding-left: 12px;
+    margin-bottom: 15px;
     border-left: 4px solid var(--primary);
+    padding-left: 12px;
+    color: var(--white);
 }
 
-.quick-box ul {
+.service-quick-points ul {
     list-style: none;
     padding: 0;
 }
 
-.quick-box ul li {
+.service-quick-points ul li {
     position: relative;
     padding-left: 22px;
     margin-bottom: 10px;
+    color: var(--gray);
 }
 
-.quick-box ul li::before {
+.service-quick-points ul li::before {
     content: "✔";
     position: absolute;
     left: 0;
@@ -190,14 +198,55 @@
     font-weight: bold;
 }
 
-/* RESPONSIVE */
+
+.service-cta-wrapper {
+    background: var(--black);
+    padding: 60px 0;
+}
+
+.service-cta {
+    padding: 30px;
+    border-left: 4px solid var(--primary);
+    background: var(--dark);
+}
+
+
+.service-cta p{
+   color: #696663;;
+}
+
+.service-cta h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.service-cta a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 30px;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.service-cta a:hover {
+    background: #e65c00;
+}
+
+
 @media (max-width: 900px) {
     .service-grid {
         grid-template-columns: 1fr;
     }
+
     .service-image {
         position: static;
     }
+
     .hero-content h1 {
         font-size: 32px;
     }
@@ -290,7 +339,7 @@
                     Custom peelable paint with premium finish
                 </div>
 
-                <div class="quick-box">
+                <div class="service-quick-points">
                     <h4>Why Car Dip Color?</h4>
                     <ul>
                         <li>Affordable paint alternative</li>
@@ -300,7 +349,7 @@
                     </ul>
                 </div>
 
-                <div class="quick-box">
+                <div class="service-quick-points">
                     <h4>Service Highlights</h4>
                     <ul>
                         <li>Professional spray application</li>

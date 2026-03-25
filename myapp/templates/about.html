@@ -7,15 +7,7 @@
 <style>
 
 
-  :root {
-  --primary: #ff6a00;      /* Orange */
-  --black: #111111;        /* Deep Black */
-  --dark: #1a1a1a;         /* Soft Black */
-  --light: #ffffff;        /* White */
-  --gray: #cccccc;
-}
 
-    
 /* =========================
    ABOUT PAGE
 ========================= */
@@ -51,6 +43,17 @@ section {
   padding: 15px 90px;
   gap: 2px;
   background: var(--black);
+}
+
+@media (max-width: 900px) {
+
+  section {
+    padding: 20px 25px;
+  }
+
+    .about-banner {
+    height: 280px;
+  }
 }
 
 /* =========================
@@ -128,7 +131,6 @@ section {
   font-weight: 700;
   margin-bottom: 20px;
   letter-spacing: 1px;
-  text-align: center;
 }
 
 .vm-box p {
@@ -138,6 +140,21 @@ section {
   max-width: 520px;
   margin: 0 auto;
   text-align: justify;
+}
+
+@media (max-width: 900px) {
+
+  .vision-mission {
+    flex-direction: column;
+    padding: 50px 25px;
+    gap: 40px;
+    text-align: justify;
+  }
+
+  .vm-box p {
+    text-align: justify;
+  }
+
 }
 
 /* =========================
@@ -182,7 +199,23 @@ section {
     color: var(--gray);
 }
 
+@media (max-width: 900px) {
 
+  .features {
+    grid-template-columns: repeat(2,1fr);
+    padding: 50px 25px;
+    gap: 30px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+}
 
 </style>
 <!-- ABOUT BANNER -->

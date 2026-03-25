@@ -8,21 +8,21 @@
 <style>
 
 
-:root {
-    --primary: #ff6a00;   
-    --black: #111111;     
-    --dark: #1a1a1a;     
-    --white: #ffffff;
-    --gray: #bbbbbb;
-}
+
 
 /* HERO */
 .service-hero {
     height: 350px;
-    background: url("{% static 'images/ac.png' %}") center/cover no-repeat;
+    background: url("{% static 'images/axle.png' %}") center/cover no-repeat;
     position: relative;
 }
+@media (max-width:768px){
 
+.service-hero{
+height:240px;
+}
+
+}
 .hero-overlay {
     height: 100%;
     display: flex;
@@ -54,7 +54,7 @@
     font-size: 14px;
     color: var(--gray);
     display: flex;
-    justify-content: center;   
+    justify-content: flex-start;   
     align-items: center;
     gap: 8px;  
 }

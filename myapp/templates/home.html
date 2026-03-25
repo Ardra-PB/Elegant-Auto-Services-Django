@@ -4,14 +4,14 @@
 {% block title %}Elegant Way Automaint{% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
     
 {% endblock %}
 
 {% block content %}
 <section class="video-hero">
 
-    <video autoplay muted loop playsinline class="bg-video">
+    <video autoplay muted loop playsinline preload="metadata" class="bg-video">
         <source src="{% static 'video/car_service.mp4' %}" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
@@ -87,48 +87,48 @@
 
     <div class="services-grid">
         <div class="service-card bg-img" 
-             data-aos="fade-up" data-aos-delay="100"
-             style="background-image: url('{% static 'images/img2.jpg' %}')">
+             data-aos="fade-up" data-aos-delay="100" loading="lazy"
+             data-bg="{% static 'images/img2.jpg' %}">
             <div class="service-content">
                 <h3>Mechanical Services</h3>
             </div>
         </div>
 
         <div class="service-card bg-img" 
-             data-aos="fade-up" data-aos-delay="200"
-             style="background-image: url('{% static 'images/img3.jpg' %}')">
+             data-aos="fade-up" data-aos-delay="200" loading="lazy"
+             data-bg="{% static 'images/img3.jpg' %}">
             <div class="service-content">
                 <h3>Electrical Services</h3>
             </div>
         </div>
 
         <div class="service-card bg-img" 
-             data-aos="fade-up" data-aos-delay="300"
-             style="background-image: url('{% static 'images/img4.jpg' %}')">
+             data-aos="fade-up" data-aos-delay="300" loading="lazy"
+             data-bg="{% static 'images/img4.jpg' %}">
             <div class="service-content">
                 <h3>Programming & Retrofit</h3>
             </div>
         </div>
 
         <div class="service-card bg-img" 
-             data-aos="fade-up" data-aos-delay="100"
-             style="background-image: url('{% static 'images/img5.jpg' %}')">
+             data-aos="fade-up" data-aos-delay="100" loading="lazy"
+             data-bg="{% static 'images/img5.jpg' %}">
             <div class="service-content">
                 <h3>Engine Repair Services</h3>
             </div>
         </div>
 
         <div class="service-card bg-img" 
-             data-aos="fade-up" data-aos-delay="200"
-             style="background-image: url('{% static 'images/img6.jpg' %}')">
+             data-aos="fade-up" data-aos-delay="200" loading="lazy"
+             data-bg="{% static 'images/img6.jpg' %}">
             <div class="service-content">
                 <h3>Service Packages</h3>
             </div>
         </div>
 
         <div class="service-card bg-img" 
-             data-aos="fade-up" data-aos-delay="300"
-             style="background-image: url('{% static 'images/img7.jpg' %}')">
+             data-aos="fade-up" data-aos-delay="300" loading="lazy"
+             data-bg="{% static 'images/img7.jpg' %}">
             <div class="service-content">
                 <h3>Extended Warranty</h3>
             </div>
@@ -231,6 +231,26 @@
     duration: 1000, 
     once: true,   
   });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const card = entry.target;
+                const bg = card.getAttribute("data-bg");
+                if (bg) {
+                    card.style.backgroundImage = `url(${bg})`;
+                }
+                observer.unobserve(card);
+            }
+        });
+    }, { rootMargin: "200px" });
+
+    document.querySelectorAll(".bg-img").forEach(card => {
+        observer.observe(card);
+    });
+});
 </script>
 {% endblock %}
 
