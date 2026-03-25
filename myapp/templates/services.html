@@ -7,41 +7,36 @@
 
 <style>
 
-:root {
-    --primary: #ff6a00;   
-    --black: #111111;     
-    --dark: #1a1a1a;      
-    --white: #ffffff;
-    --gray: #bbbbbb;
-}
-
     
-    
+    /* SERVICES SECTION */
 .services-section {
     padding: 30px 80px;
     background: var(--black);
 }
 
-
+/* SECTION TITLE */
 .section-title {
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 40px;
     color: var(--primary);
+    text-align: center;
+    text-transform: uppercase;
 }
 
-
+/* GRID */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
-
+/* CARD */
 .service-card {
     background: var(--dark);
     border-radius: 6px;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(255,106,0,0.15);
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -58,7 +53,7 @@
     object-fit: cover;
 }
 
-
+/* CONTENT */
 .service-content {
     padding: 20px;
     display: flex;
@@ -82,7 +77,7 @@
     margin-bottom: 20px;
 }
 
-
+/* READ MORE */
 .read-more {
     font-weight: 700;
     font-size: 15px;
@@ -95,12 +90,57 @@
     color: var(--primary);
 }
 
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Large tablets */
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .services-section {
+        padding: 30px 60px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-section {
+        padding: 30px 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-section {
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .service-card img {
+        height: 180px;
+    }
+}
+
 
 
 </style>
 
 
-
+<!-- SERVICES SECTION -->
 <section class="services-section">
     <div class="container">
         <h2 class="section-title">Services</h2>
@@ -109,7 +149,7 @@
 
             <!-- SERVICE CARD 1 -->
             <div class="service-card">
-                <img src="{% static 'images/g5.jpg' %}" alt="AC Repair">
+                <img src="{% static 'assets/g5.jpg' %}" alt="AC Repair">
                 <div class="service-content">
                     <h3>AC REPAIR</h3>
                     <p>
@@ -123,7 +163,7 @@
 
             <!-- SERVICE CARD 2 -->
             <div class="service-card">
-                <img src="{% static 'images/g6.jpg' %}" alt="Axle Repair">
+                <img src="{% static 'assets/g6.jpg' %}" alt="Axle Repair">
                 <div class="service-content">
                     <h3>AXLE / DRIVESHAFT REPAIR</h3>
                     <p>
@@ -138,7 +178,7 @@
 
             <!-- SERVICE CARD 3 -->
             <div class="service-card">
-                <img src="{% static 'images/g7.png' %}" alt="Brake Repair">
+                <img src="{% static 'assets/g7.png' %}" alt="Brake Repair">
                 <div class="service-content">
                     <h3>BRAKE REPAIR</h3>
                     <p>
@@ -153,7 +193,7 @@
 
             <!-- SERVICE CARD 4 -->
             <div class="service-card">
-                <img src="{% static 'images/g8.png' %}" alt="Calibration">
+                <img src="{% static 'assets/g8.png' %}" alt="Calibration">
                 <div class="service-content">
                     <h3>CAMERA / RADAR CALIBRATION</h3>
                     <p>
@@ -167,7 +207,7 @@
 
             <!-- SERVICE CARD 5 -->
             <div class="service-card">
-                <img src="{% static 'images/g9.png' %}" alt="Software Repair">
+                <img src="{% static 'assets/g9.png' %}" alt="Software Repair">
                 <div class="service-content">
                     <h3>Car Software Repair & Programming</h3>
                     <p>
@@ -179,11 +219,11 @@
 
             <!-- SERVICE CARD 6 -->
             <div class="service-card">
-                <img src="{% static 'images/g10.png' %}" alt="system Repair">
+                <img src="{% static 'assets/g10.png' %}" alt="system Repair">
                 <div class="service-content">
                     <h3>Comfort System Repair</h3>
                     <p>
-                         Sharjah is well known for its Luxury & comfortable rides and highly equipped cars that ensures comfort to the drivers.
+                        UAE is well known for its Luxury & comfortable rides and highly equipped cars that ensures comfort to the drivers.
                     </p>
                     <a href="{% url 'comfort_system_repair' %}" class="read-more">READ MORE</a>
                 </div>
@@ -191,7 +231,7 @@
 
             <!-- SERVICE CARD 7 -->
             <div class="service-card">
-                <img src="{% static 'images/g11.png' %}" alt="Engine Repair">
+                <img src="{% static 'assets/g11.png' %}" alt="Engine Repair">
                 <div class="service-content">
                     <h3>Engine Control Unit Repair</h3>
                     <p>
@@ -203,11 +243,11 @@
 
             <!-- SERVICE CARD 8 -->
             <div class="service-card">
-                <img src="{% static 'images/g12.png' %}" alt="Cooling Repair">
+                <img src="{% static 'assets/g12.png' %}" alt="Cooling Repair">
                 <div class="service-content">
                     <h3>Engine Cooling System Repair</h3>
                     <p>
-                        Did you know that engine overheating is one of the most common problems on the roads of  Sharjah?
+                        Did you know that engine overheating is one of the most common problems on the roads of UAE?
                     </p>
                     <a href="{% url 'cooling' %}" class="read-more">READ MORE</a>
                 </div>
@@ -215,7 +255,7 @@
 
             <!-- SERVICE CARD 9 -->
             <div class="service-card">
-                <img src="{% static 'images/g13.png' %}" alt="Engine Repair">
+                <img src="{% static 'assets/g13.png' %}" alt="Engine Repair">
                 <div class="service-content">
                     <h3>Engine Management System Repair</h3>
                     <p>
@@ -227,7 +267,7 @@
 
             <!-- SERVICE CARD 10 -->
             <div class="service-card">
-                <img src="{% static 'images/g14.png' %}" alt="Gearbox Repair">
+                <img src="{% static 'assets/g14.png' %}" alt="Gearbox Repair">
                 <div class="service-content">
                     <h3>Gearbox repair</h3>
                     <p>
@@ -239,7 +279,7 @@
 
             <!-- SERVICE CARD 11 -->
             <div class="service-card">
-                <img src="{% static 'images/g15.png' %}" alt="Pre-purchase ">
+                <img src="{% static 'assets/g15.png' %}" alt="Pre-purchase ">
                 <div class="service-content">
                     <h3>Pre-purchase inspection</h3>
                     <p>
@@ -251,7 +291,7 @@
 
             <!-- SERVICE CARD 12 -->
             <div class="service-card">
-                <img src="{% static 'images/g16.png' %}" alt="Suspension Repair">
+                <img src="{% static 'assets/g16.png' %}" alt="Suspension Repair">
                 <div class="service-content">
                     <h3>Suspension Repair</h3>
                     <p>
@@ -263,7 +303,7 @@
 
             <!-- SERVICE CARD 13 -->
             <div class="service-card">
-                <img src="{% static 'images/g17.png' %}" alt="Wheel Repair">
+                <img src="{% static 'assets/g17.png' %}" alt="Wheel Repair">
                 <div class="service-content">
                     <h3>Touchless wheel alignment</h3>
                     <p>
@@ -274,7 +314,7 @@
 
             <!-- SERVICE CARD 14 -->
             <div class="service-card">
-                <img src="{% static 'images/g18.png' %}" alt="Transmission Repair">
+                <img src="{% static 'assets/g18.png' %}" alt="Transmission Repair">
                 <div class="service-content">
                     <h3>Transmission Repair</h3>
                     <p>
@@ -286,7 +326,7 @@
 
             <!-- SERVICE CARD 15 -->
             <div class="service-card">
-                <img src="{% static 'images/g19.png' %}" alt="Fleet Repair">
+                <img src="{% static 'assets/g19.png' %}" alt="Fleet Repair">
                 <div class="service-content">
                     <h3>Fleet Maintenance</h3>
                     <p>
@@ -298,7 +338,7 @@
 
             <!-- SERVICE CARD 16 -->
             <div class="service-card">
-                <img src="{% static 'images/g20.png' %}" alt="Major ">
+                <img src="{% static 'assets/g20.png' %}" alt="Major ">
                 <div class="service-content">
                     <h3>Major Service</h3>
                     <p>
@@ -310,7 +350,7 @@
 
             <!-- SERVICE CARD 17 -->
             <div class="service-card">
-                <img src="{% static 'images/g21.png' %}" alt=" Minor">
+                <img src="{% static 'assets/g21.png' %}" alt=" Minor">
                 <div class="service-content">
                     <h3>Minor Service</h3>
                     <p>
@@ -322,7 +362,7 @@
 
             <!-- SERVICE CARD 18 -->
             <div class="service-card">
-                <img src="{% static 'images/g29.png' %}" alt="Paint Repair">
+                <img src="{% static 'assets/g29.png' %}" alt="Paint Repair">
                 
                 <div class="service-content">
                     <h3>Paint Protection film</h3>
@@ -335,7 +375,7 @@
 
             <!-- SERVICE CARD 19 -->
             <div class="service-card">
-                <img src="{% static 'images/g30.png' %}" alt="Brake">
+                <img src="{% static 'assets/g30.png' %}" alt="Brake">
                 <div class="service-content">
                     <h3>Brake Caliper Painting</h3>
                     <p>
@@ -347,7 +387,7 @@
 
             <!-- SERVICE CARD 20 -->
             <div class="service-card">
-                <img src="{% static 'images/g31.png' %}" alt="Ceramic">
+                <img src="{% static 'assets/g31.png' %}" alt="Ceramic">
                 <div class="service-content">
                     <h3>Ceramic Coating</h3>
                     <p>
@@ -359,7 +399,7 @@
 
             <!-- SERVICE CARD 21 -->
             <div class="service-card">
-                <img src="{% static 'images/g32.png' %}" alt="Color">
+                <img src="{% static 'assets/g32.png' %}" alt="Color">
                 <div class="service-content">
                     <h3>Car dip color service</h3>
                     <p>
@@ -371,7 +411,7 @@
 
             <!-- SERVICE CARD 22 -->
             <div class="service-card">
-                <img src="{% static 'images/g26.png' %}" alt="Tinting">
+                <img src="{% static 'assets/g26.png' %}" alt="Tinting">
                 <div class="service-content">
                     <h3>Car Tinting services</h3>
                     <p>
