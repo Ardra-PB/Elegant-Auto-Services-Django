@@ -50,11 +50,10 @@
             }
         </script>
         
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
-
 
     <style>
 
+       
         :root {
         --deep-black: #0a0a0a;
         --soft-black: #1a1a1a;
@@ -88,76 +87,21 @@
 
         /*HAMBURGER BUTTON*/
 
-       
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: #fff;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-/* Mobile Styles */
-@media (max-width: 992px) {
-
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #111;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-        gap: 15px;
-
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease;
-    }
-
-    .nav-links.active {
-        max-height: 1000px; 
-    }
-
-    .nav-links li {
-        width: 100%;
-    }
-
-    .nav-links li a {
-        width: 100%;
-        padding: 10px 0;
-        border-bottom: 1px solid #222;
-    }
-
-   
-    .dropdown-menu {
-        position: static;
+        .hamburger {
         display: none;
-        grid-template-columns: 1fr;
-        width: 100%;
-        padding-left: 10px;
-    }
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        }
 
-    .dropdown.active .dropdown-menu {
-        display: block;
-    }
+        .hamburger span {
+        width: 26px;
+        height: 3px;
+        background: #fff;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        }
 
-    .btn-appointment {
-        display: none; 
-    }
-}
         
         .cta-btn {
         background: linear-gradient(135deg, #EB952D, #e77f00);
@@ -542,7 +486,7 @@
 
     .footer-column {
         flex: 1;
-        min-width: 200px;
+        min-width: 220px;
     }
 
 
@@ -681,6 +625,82 @@
         }
     }
 
+
+    
+.working-hours {
+    color: #fff;
+    margin-right: 15px;
+}
+
+.hours-list {
+    list-style: none;
+    padding: 0;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+}
+
+.hours-list li span:first-child {
+    font-weight: 500;
+}
+
+.hours-list li span:last-child {
+    text-align: right;
+}
+
+.closed {
+    color: #ff4d4d;
+    font-weight: 600;
+}
+
+.open-status{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:12px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.status-dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#4CAF50;
+}
+
+.status-closed .status-dot{
+    background:#ff4d4d;
+}
+
+.status-open{
+    color:#4CAF50;
+}
+
+.status-closed{
+    color:#ff4d4d;
+}
+
+.today{
+color:#EB952D;
+font-weight:700;
+}
+.map-link{
+color:#EB952D;
+font-size:14px;
+text-decoration:none;
+}
+
+.map-link:hover{
+text-decoration:underline;
+}
+
+    
     </style>
     
 
@@ -711,8 +731,8 @@
 
 <div class="top-bar">
     <div class="top-left">
-        <span><i class="fa-solid fa-phone"></i> +71554663737</span>
-        <span><i class="fa-brands fa-whatsapp"></i> +71554663737</span>
+        <span><i class="fa-solid fa-phone"></i> +971554663737</span>
+        <span><i class="fa-brands fa-whatsapp"></i> +971554663737</span>
     </div>
     
     <div class="top-right">
@@ -729,12 +749,6 @@
     <img src="{% static 'images/logo.png' %}" alt="Elegant Way Auto Maint Logo">
     </a>
     </div>
-     
-    <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
 
     <ul class="nav-links">
     <li><a href="{% url 'home' %}">Home</a></li>
@@ -785,12 +799,7 @@
 <div class="floating-contact">
 
     <!-- WHATSAPP -->
-<<<<<<< HEAD
-    <a href="https://wa.me/+71554663737
-"
-=======
     <a href="https://wa.me/971554663737"
->>>>>>> 25d99b422775da4e6a6c4a8fa22bdb3ad3a86303
        target="_blank"
        class="float-btn whatsapp"
        aria-label="Chat on WhatsApp">
@@ -798,8 +807,6 @@
     </a>
 
     <!-- PHONE -->
-    <a href="tel:+71554663737
-"
     <a href="tel:+971554663737"
        class="float-btn phone"
        aria-label="Call Us">
@@ -842,16 +849,27 @@
             </ul>
         </div>
 
-        <div class="footer-column">
-            <h3>WORKING HOURS</h3>
-            <ul>
-                <li><b>Monday - Thursday</b></li>
-                <li><b>Saturday - Sunday</b></li><br>
-                <li><a>8:00 AM - 1:00 PM</a></li>
-                <li><a>3:00 PM - 8:00 PM</a></li><br>
-                <li><b>Friday: Closed</b></li>
-            </ul>
-        </div>
+<div class="footer-column working-hours">
+
+    <h3>WORKING HOURS</h3>
+
+    <!-- OPEN STATUS -->
+    <div class="open-status" id="openStatus">
+        <span class="status-dot"></span>
+        <span id="statusText">Checking...</span>
+    </div>
+
+    <ul class="hours-list">
+
+        <li id="mon"><span>Mon</span><span>8 AM – 1 PM | 3 – 8 PM</span></li>
+<li id="tue"><span>Tues</span><span>8 AM – 1 PM | 3 – 8 PM</span></li>
+<li id="wed"><span>Wed</span><span>8:30 AM – 1 PM | 3 – 8 PM</span></li>
+<li id="thu"><span>Thur</span><span>8 AM – 1 PM | 3 – 8 PM</span></li>
+<li id="fri"><span>Fri</span><span class="closed">Closed</span></li>
+<li id="sat"><span>Sat</span><span>8 AM – 1 PM | 3 – 8 PM</span></li>
+<li id="sun"><span>Sun</span><span>8 AM – 1 PM | 3 – 8 PM</span></li>
+    </ul>
+</div>
 
         <div class="footer-column">
             <h3>CONNECT WITH US</h3>
@@ -860,17 +878,17 @@
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.instagram.com/elegantwayauto?igsh=ZjdpeHp1a215Znpx" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.linkedin.com/in/jyothisvs?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/jyothisvs?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="Facebook"><i class="fab fa-linkedin-in"></i></a>
             </div>
 
             <h3 class="contact-title">CONTACT</h3>
-            <p class="contact-info">Call: <a href="tel:+71554663737"><strong>+71554663737</strong></a></p>
+            <p class="contact-info">Call: <a href="tel:+971554663737"><strong>+971554663737</strong></a></p>
             <p class="contact-info">Email: <a href="mailto:jyothisus@gmail.com">jyothisus@gmail.com</a></p>
         </div>
     </div>
 
     <div class="footer-bottom">
-        <p>Copyright© Elegant Car Services All Rights Reserved</p>
+        <p>Copyright © {% now "Y" %} Elegant Way Auto Maint. All Rights Reserved.</p>
     </div>
 </footer>
 
@@ -882,8 +900,10 @@
 
 
 <!-- JS -->
-<script src="{% static 'js/script.js' %}"></script>
 {% block extra_js %}
+{{ block.super }}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const toasts = document.querySelectorAll(".toast");
@@ -920,33 +940,59 @@ document.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth"
         });
     });
+</script>
+<script>
+function checkOpenStatus(){
 
+    const now = new Date(
+    new Date().toLocaleString("en-US", { timeZone: "Asia/Dubai" })
+);
+    const day = now.getDay(); 
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+    const time = hour + minute/60;
 
-    document.addEventListener("DOMContentLoaded", function () {
+    let open = false;
 
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.querySelector(".nav-links");
+    if(day === 5){ // Friday closed
+        open = false;
+    }
+    else if(day === 3){ // Wednesday
+        if((time >= 8.5 && time <= 13) || (time >= 15 && time <= 20)){
+            open = true;
+        }
+    }
+    else{ // Other days
+        if((time >= 8 && time <= 13) || (time >= 15 && time <= 20)){
+            open = true;
+        }
+    }
 
-    // Toggle menu
-    hamburger.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-    });
+    const days = ["sun","mon","tue","wed","thu","fri","sat"];
+    const today = new Date().getDay();
+    const todayRow = document.getElementById(days[today]);
 
-    // Dropdown (mobile click)
-    document.querySelectorAll(".dropdown > a").forEach(item => {
-        item.addEventListener("click", function (e) {
-            if (window.innerWidth <= 992) {
-                e.preventDefault();
-                this.parentElement.classList.toggle("active");
-            }
-        });
-    });
+    if(todayRow){
+    todayRow.classList.add("today");
+    }
 
-});
+    const statusText = document.getElementById("statusText");
+    const openStatus = document.getElementById("openStatus");
+
+    openStatus.classList.remove("status-open","status-closed");
+
+        if(open){
+            statusText.textContent = "Open Now";
+            openStatus.classList.add("status-open");
+        }else{
+            statusText.textContent = "Closed Now";
+            openStatus.classList.add("status-closed");
+        }
+}
+
+checkOpenStatus();
 </script>
 
-
-{% endblock %}
 
 </body>
 </html>
