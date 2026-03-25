@@ -86,23 +86,32 @@
         }
 
 
-        /*HAMBURGER BUTTON*/
+        header {
+        position: sticky;
+        top: 0;
+        z-index: 1000; 
+        width: 100%;
+        }
+
+
+
+    /*HAMBURGER BUTTON*/
 
        
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
 
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: #fff;
-    border-radius: 2px;
-    transition: 0.3s;
-}
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
 
 /* Mobile Styles */
 @media (max-width: 992px) {
@@ -366,7 +375,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 5px 30px;
-        position: sticky;
+        position: sticky ;
         top: 0;
         z-index: 1000;
         box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -785,21 +794,16 @@
 <div class="floating-contact">
 
     <!-- WHATSAPP -->
-<<<<<<< HEAD
-    <a href="https://wa.me/+71554663737
-"
-=======
+
     <a href="https://wa.me/971554663737"
->>>>>>> 25d99b422775da4e6a6c4a8fa22bdb3ad3a86303
-       target="_blank"
+       target="blank"
        class="float-btn whatsapp"
        aria-label="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!-- PHONE -->
-    <a href="tel:+71554663737
-"
+
     <a href="tel:+971554663737"
        class="float-btn phone"
        aria-label="Call Us">
