@@ -43,7 +43,6 @@ def electric_car_repair(request):
 def about(request):
     return render(request, 'about.html')
 
-
 def services(request):
     return render(request, 'services.html')
 
@@ -145,7 +144,7 @@ def book_appointment(request):
                 admin_message,
                 settings.DEFAULT_FROM_EMAIL,
                 ['ardrapb201@gmail.com'],
-                fail_silently=True,
+                fail_silently=False,
             )
 
            
@@ -157,13 +156,13 @@ def book_appointment(request):
                 customer_message,
                 settings.DEFAULT_FROM_EMAIL,
                 [appointment.email],
-                fail_silently=True,
+                fail_silently=False,
             )
 
             return redirect('appointment_success')
     else:
         form = AppointmentForm()
-    return render(request, 'appointment_success.html', {'form': form})
+    return render(request, 'reviews.html', {'form': form})
 
 
 def contact(request):
