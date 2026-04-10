@@ -129,6 +129,8 @@ from django.core.mail import send_mail
 from django.conf import settings
 from .forms import AppointmentForm
 from .forms import ContactForm
+from django.contrib import messages
+
 
 def book_appointment(request):
     if request.method == 'POST':
@@ -169,37 +171,40 @@ def book_appointment(request):
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
+
         if form.is_valid():
             contact_obj = form.save()
 
-            
-            admin_subject = 'New Contact Inquiry'
-            admin_message = f"New Inquiry:\n\nName: {contact_obj.name}\nMessage: {contact_obj.message}"
-            
+            # 📩 Email to admin
             send_mail(
-                admin_subject,
-                admin_message,
+                'New Contact Inquiry',
+                f"New Inquiry:\n\nName: {contact_obj.name}\nEmail: {contact_obj.email}\nMessage: {contact_obj.message}",
                 settings.DEFAULT_FROM_EMAIL,
                 ['ardrapb201@gmail.com'],
-                fail_silently=True,
+                fail_silently=False,  # 👈 show errors if email fails
             )
 
-            
-            customer_subject = 'We received your message!'
-            customer_message = f"Hi {contact_obj.name},\n\nThanks for reaching out! We've received your message and one of our experts will get back to you shortly.\n\nBest Regards,\nElegant Way Auto Maint"
-            
+            # 📩 Auto-reply to customer
             send_mail(
-                customer_subject,
-                customer_message,
+                'We received your message!',
+                f"Hi {contact_obj.name},\n\n"
+                f"Thanks for reaching out! We've received your message and our team will contact you shortly.\n\n"
+                f"Best Regards,\nElegant Way Auto Maint",
                 settings.DEFAULT_FROM_EMAIL,
-                [contact_obj.email], 
-                fail_silently=True,
+                [contact_obj.email],
+                fail_silently=False,
             )
 
-            return redirect('appointment_success')
+            # ✅ Toast message trigger
+            messages.success(request, "✅ Message sent successfully! We will contact you soon.")
 
-    return render(request, 'contact.html')
+            return redirect('contact')  # 👈 stay on same page (toast will show)
 
+        else:
+            # ❌ If form invalid
+            messages.error(request, "❌ Something went wrong. Please check your inputs.")
+
+    return render(request, 'contact.html', {'form': ContactForm()})
 
 
 
