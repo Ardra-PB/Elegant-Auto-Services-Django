@@ -1,4 +1,6 @@
-from django.shortcuts import render
+
+from django.shortcuts import render, redirect
+
 
 def home(request):
     return render(request, "home.html")
@@ -121,7 +123,6 @@ def appointment_success(request):
 
 
 
-from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import AppointmentForm
@@ -193,13 +194,13 @@ def contact(request):
             )
 
             # ✅ Toast message trigger
-            messages.success(request, "✅ Message sent successfully! We will contact you soon.")
+            messages.success(request, " Message sent successfully! We will contact you soon.")
 
-            return redirect('contact')  # 👈 stay on same page (toast will show)
+            return redirect('appointment_success')  # 👈 stay on same page (toast will show)
 
         else:
             # ❌ If form invalid
-            messages.error(request, "❌ Something went wrong. Please check your inputs.")
+            messages.error(request, "Something went wrong. Please check your inputs.")
 
     return render(request, 'contact.html', {'form': ContactForm()})
 
@@ -208,7 +209,7 @@ def contact(request):
 
 
 
-from django.shortcuts import render, redirect
+
 from .models import Review
 from .forms import ReviewForm
 
