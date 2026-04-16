@@ -1,8 +1,7 @@
 
-/* ===== VIDEO HERO SECTION ===== */
 
 
-
+/* VIDEO SECTION */
 .video-hero {
     position: relative;
     height: 90vh;
@@ -48,8 +47,6 @@
     font-size: 18px;
     margin-bottom: 25px;
 }
-
-
 
 .hero-btn {
     background: #e50914;
@@ -127,7 +124,7 @@
 
 /* HEADER */
 .services-header .section-title {
-    color: #e50914;
+    color:var(--primary);
     font-weight: bold;
     letter-spacing: 1px;
 }
@@ -432,7 +429,7 @@ form button:hover {
     }
 
     .section-title {
-        color: var(--primary-orange);
+        color: var(--primary);
         font-weight: 800;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -455,7 +452,7 @@ form button:hover {
         content: '';
         width: 60px;
         height: 4px;
-        background: var(--primary-orange);
+        background: var(--primary);
         position: absolute;
         bottom: -15px;
         left: 50%;
@@ -504,7 +501,7 @@ form button:hover {
     .service-card:hover {
         transform: translateY(-10px);
         filter: grayscale(0%);
-        border-color: var(--primary-orange);
+        border-color: var(--primary);
     }
 
     .service-card:hover::before {
@@ -550,7 +547,7 @@ form button:hover {
         flex-wrap: wrap;
         font-family: 'Segoe UI', Roboto, sans-serif;
         min-height: 600px;
-        background-color: var(--brand-black);
+        background-color: var(--soft-black);
         overflow: hidden;
     }
 
@@ -564,7 +561,7 @@ form button:hover {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        border-right: 4px solid var(--brand-orange);
+        border-right: 4px solid var(--primary);
     }
 
     .content-section h1 {
@@ -579,9 +576,9 @@ form button:hover {
     .content-section p {
         font-size: 18px;
         line-height: 1.8;
-        color: var(--text-light);
+        color: var(--light);
         max-width: 550px;
-        border-left: 3px solid var(--brand-orange);
+        border-left: 3px solid var(--primary);
         padding-left: 20px;
     }
 
@@ -589,7 +586,7 @@ form button:hover {
     .form-section {
         flex: 1;
         min-width: 350px;
-        background-color: var(--brand-black);
+        background-color: var(--deep-black);
         padding: 80px;
         display: flex;
         flex-direction: column;
@@ -601,7 +598,7 @@ form button:hover {
         font-size: 36px;
         font-weight: 700;
         margin-bottom: 40px;
-        color: var(--brand-orange);
+        color: var(--primary);
         text-transform: uppercase;
         letter-spacing: 1px;
     }
@@ -623,7 +620,7 @@ form button:hover {
     .form-textarea {
         flex: 1;
         padding: 18px;
-        background: var(--input-bg);
+        background: var(--deep-black);
         border: 1px solid #333;
         outline: none;
         font-size: 16px;
@@ -635,7 +632,7 @@ form button:hover {
     .form-row input:focus, 
     .form-row select:focus, 
     .form-textarea:focus {
-        border-color: var(--brand-orange);
+        border-color: var(--primary);
         box-shadow: 0 0 10px rgba(255, 107, 0, 0.2);
         transform: translateY(-2px);
     }
@@ -652,9 +649,9 @@ form button:hover {
     .btn-book {
         width: 100%;
         padding: 20px;
-        background-color: var(--brand-orange);
+        background-color: var(--primary);
         color: #000;
-        border: 2px solid var(--brand-orange);
+        border: 2px solid var(--primary);
         font-size: 18px;
         font-weight: 800;
         cursor: pointer;
@@ -665,7 +662,7 @@ form button:hover {
 
     .btn-book:hover {
         background-color: transparent;
-        color: var(--brand-orange);
+        color: var(--primary);
         transform: scale(1.02);
     }
 
@@ -710,7 +707,7 @@ form button:hover {
         border-radius: 4px;
         filter: grayscale(20%);
         transition: filter 0.5s ease, transform 0.5s ease;
-        box-shadow: 20px 20px 0px var(--primary-orange);
+        box-shadow: 20px 20px 0px var(--primary);
     }
 
     .highlight-image:hover img {
@@ -734,7 +731,7 @@ form button:hover {
     }
 
     .highlight-content h1 .orange-text {
-        color: var(--primary-orange);
+        color: var(--primary);
         display: block;
         font-size: 16px;
         letter-spacing: 4px;
@@ -759,7 +756,7 @@ form button:hover {
         align-items: flex-start;
         gap: 20px;
         padding: 20px;
-        background: var(--matte-black);
+        background: var(--deep-black);
         border-radius: 8px;
         transition: all 0.3s ease;
         border: 1px solid transparent;
@@ -767,7 +764,7 @@ form button:hover {
 
     .point:hover {
         background: #222;
-        border-color: var(--primary-orange);
+        border-color: var(--primary);
         transform: translateX(10px);
     }
 
@@ -775,13 +772,13 @@ form button:hover {
         font-size: 32px;
         font-weight: 900;
         color: transparent;
-        -webkit-text-stroke: 1px var(--primary-orange);
+        -webkit-text-stroke: 1px var(--primary);
         line-height: 1;
         transition: color 0.3s ease;
     }
 
     .point:hover .number {
-        color: var(--primary-orange);
+        color: var(--primary);
     }
 
     .point h4 {
@@ -808,7 +805,7 @@ form button:hover {
             text-align: left;
         }
         .highlight-image img {
-            box-shadow: 0px 15px 0px var(--primary-orange);
+            box-shadow: 0px 15px 0px var(--primary);
         }
     }
 
@@ -847,7 +844,7 @@ form button:hover {
         z-index: 2;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle, transparent 20%, var(--hero-black-alpha) 100%);
+        background: radial-gradient(circle, transparent 20%, var(--deep-black) 100%);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -872,7 +869,7 @@ form button:hover {
         font-weight: 300;
         letter-spacing: 5px;
         text-transform: uppercase;
-        color: var(--hero-orange);
+        color: var(--primary);
         margin-bottom: 40px;
         opacity: 0;
         transform: translateY(20px);
@@ -882,7 +879,7 @@ form button:hover {
 
     .hero-btn {
         padding: 18px 45px;
-        background-color: var(--hero-orange);
+        background-color: var(--primary);
         color: #000;
         text-decoration: none;
         font-size: 14px;
@@ -891,14 +888,14 @@ form button:hover {
         letter-spacing: 2px;
         border-radius: 0; 
         transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        border: 2px solid var(--hero-orange);
+        border: 2px solid var(--primary);
         opacity: 0;
         animation: heroFadeIn 1s ease forwards 0.6s;
     }
 
     .hero-btn:hover {
         background-color: transparent;
-        color: var(--hero-orange);
+        color: var(--primary);
         box-shadow: 0 0 30px rgba(255, 107, 0, 0.4);
         transform: scale(1.05);
     }
@@ -941,13 +938,13 @@ form button:hover {
         }
 
         .section-title1 {
-            color: var(--text-light)!important;
+            color: var(--text-muted)!important;
             font-size: 2.5rem !important;
             margin-bottom: 40px!important;
         }
 
         .section-title1 span {
-            color: var(--primary-orange)!important;
+            color: var(--primary)!important;
         }
 
 
@@ -959,7 +956,7 @@ form button:hover {
         }
 
         .review-card {
-            background-color: var(--card-bg);
+            background-color: var(--deep-black);
             padding: 30px;
             border-radius: 12px;
             border-bottom: 4px solid transparent;
@@ -969,30 +966,30 @@ form button:hover {
 
         .review-card:hover {
             transform: translateY(-10px);
-            border-color: var(--primary-orange);
+            border-color: var(--primary);
         }
 
         .stars {
-            color: var(--primary-orange);
+            color: var(--primary);
             margin-bottom: 15px;
             font-size: 1.2rem;
         }
 
         .review-text {
-            color: var(--text-gray);
+            color: var(--text-muted);
             line-height: 1.6;
             font-style: italic;
             margin-bottom: 20px;
         }
 
         .customer-name {
-            color: var(--text-light);
+            color: var(--text-muted);
             font-weight: bold;
             display: block;
         }
 
         .view-all-btn {
-            background-color: var(--primary-orange);
+            background-color: var(--primary);
             color: white;
             padding: 15px 40px;
             border: none;
@@ -1021,13 +1018,13 @@ form button:hover {
         }
 
         .section-title1 {
-            color: var(--text-light)!important;
+            color: var(--text-muted)!important;
             font-size: 2.5rem !important;
             margin-bottom: 40px!important;
         }
 
         .section-title1 span {
-            color: var(--primary-orange)!important;
+            color: var(--primary)!important;
         }
 
 
@@ -1039,7 +1036,7 @@ form button:hover {
         }
 
         .review-card {
-            background-color: var(--card-bg);
+            background-color: var(--deep-black);
             padding: 30px;
             border-radius: 12px;
             border-bottom: 4px solid transparent;
@@ -1049,30 +1046,30 @@ form button:hover {
 
         .review-card:hover {
             transform: translateY(-10px);
-            border-color: var(--primary-orange);
+            border-color: var(--primary);
         }
 
         .stars {
-            color: var(--primary-orange);
+            color: var(--primary);
             margin-bottom: 15px;
             font-size: 1.2rem;
         }
 
         .review-text {
-            color: var(--text-gray);
+            color: var(--text-muted);
             line-height: 1.6;
             font-style: italic;
             margin-bottom: 20px;
         }
 
         .customer-name {
-            color: var(--text-light);
+            color: var(--text-muted);
             font-weight: bold;
             display: block;
         }
 
         .view-all-btn {
-            background-color: var(--primary-orange);
+            background-color: var(--primary);
             color: white;
             padding: 15px 40px;
             border: none;
