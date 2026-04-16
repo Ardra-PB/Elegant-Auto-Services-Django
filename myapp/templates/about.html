@@ -3,359 +3,255 @@
 
 {% block title %}About Us | Elegant Way Auto Maint{% endblock %}
 
-{% block content %}
-<style>
-
-
-
-/* =========================
-   ABOUT PAGE
-========================= */
-.about-banner {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-}
-
-.about-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-body {
-    background: var(--black) !important;
+{% block extra_css %}
+<style>/* PAGE WRAPPER */
+.about-page {
+    background: var(--black);
     color: var(--light);
 }
 
+/* BANNER */
+.about-banner {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
 
-/* =========================
-   COMMON SECTIONS
-========================= */
+.about-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* COMMON SECTION */
+.about-page section {
+    padding: 40px 90px;
+}
+
 .section-title {
-  color: var(--primary);
-  font-size: 28px;
-  margin: 25px 0 5px;
+    color: var(--primary);
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
-section {
-  padding: 15px 90px;
-  gap: 2px;
-  background: var(--black);
-}
-
-@media (max-width: 900px) {
-
-  section {
-    padding: 20px 25px;
-  }
-
-    .about-banner {
-    height: 280px;
-  }
-}
-
-/* =========================
-   FACILITIES
-========================= */
-.facilities {
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: auto;
-  background: var(--black);
-}
-
-.facilities h2 {
-  color: var(--primary);
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 16px;
-  color: var(--gray);
-  margin-bottom: 40px;
-}
-
-.facilities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.facility-item {
-  background: var(--dark);
-  padding: 18px 18px 18px 45px;
-  border-radius: 8px;
-  font-size: 15px;
-  position: relative;
-  line-height: 1.5;
-  color: var(--light);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.facility-item::before {
-  content: "✔";
-  position: absolute;
-  left: 18px;
-  top: 18px;
-  color: var(--primary);
-  font-weight: bold;
-}
-
-.facility-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(255,106,0,0.3);
-}
-
-/* =========================
-   VISION & MISSION
-========================= */
-.vision-mission {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 80px;
-  padding: 80px 120px;
-  background-color: var(--black);
-}
-
-.vm-box {
-  flex: 1;
-}
-
-.vm-box h2 {
-  color: var(--primary);
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-.vm-box p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--gray);
-  max-width: 520px;
-  margin: 0 auto;
-  text-align: justify;
-}
-
-@media (max-width: 900px) {
-
-  .vision-mission {
-    flex-direction: column;
-    padding: 50px 25px;
-    gap: 40px;
-    text-align: justify;
-  }
-
-  .vm-box p {
-    text-align: justify;
-  }
-
-}
-
-/* =========================
-   FEATURES
-========================= */
-.features {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
-  padding: 80px;
-  text-align: center;
-  background: var(--black);
-}
-
-.feature-box i {
-  font-size: 40px;
-  color: var(--primary);
-  margin-bottom: 20px;
-}
-
-.feature-box h4 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: var(--light);
-}
-
-.feature-box p {
-  font-size: 15px;
-  color: var(--gray);
-  line-height: 1.7;
-}
-
-.vision-list {
-    margin-top: 15px;
-    padding-left: 20px;
-}
-
-.vision-list li {
-    margin-bottom: 8px;
-    font-size: 16px;
+/* ABOUT TEXT */
+.about-section p {
+    margin-bottom: 15px;
+    line-height: 1.7;
     color: var(--gray);
 }
 
+.quote {
+    font-style: italic;
+    color: var(--light);
+}
+
+/* FACILITIES */
+.facilities {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.facility-item {
+    background: var(--dark);
+    padding: 18px 18px 18px 45px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.facility-item::before {
+    content: "✔";
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: var(--primary);
+}
+
+/* VISION */
+.vision-mission {
+    display: flex;
+    gap: 60px;
+}
+
+.vm-box {
+    flex: 1;
+}
+
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.feature-box i {
+    font-size: 35px;
+    color: var(--primary);
+}
+
+/* RESPONSIVE */
 @media (max-width: 900px) {
+    .about-page section {
+        padding: 30px 20px;
+    }
 
-  .features {
-    grid-template-columns: repeat(2,1fr);
-    padding: 50px 25px;
-    gap: 30px;
-  }
+    .vision-mission {
+        flex-direction: column;
+    }
 
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 500px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+}</style>
+{% endblock %}
 
-  .features {
-    grid-template-columns: 1fr;
-  }
+{% block content %}
+<div class="about-page">
 
-}
-
-</style>
-<!-- ABOUT BANNER -->
-<div class="about-banner">
-    <img src="{% static 'images/about.png' %}" alt="About Elegant Way Auto Maint">
-</div>
-
-<!-- ABOUT CONTENT -->
-<section class="about" style="text-align: justify;">
-    <h2 class="section-title">ABOUT THE COMPANY</h2><br>
-
-    <p style="font-style: italic;">
-        "Elegant Way Auto Maint Services is a complete solution for all automotive repair and service needs in the UAE."
-    </p><br>
-
-    <p>
-        Founded in 2019, Elegant Way Auto Maint Services was created with the goal of delivering a higher standard of vehicle
-        repair and maintenance than traditional car dealerships—while offering services at more competitive and
-        transparent prices.
-    </p><br>
-
-    <p>
-        Today, we operate branches exclusively in Sharjah, ensuring convenient and reliable vehicle servicing for our customers. To make vehicle servicing even more convenient for our customers across the
-        GCC, we are actively planning further expansion.
-    </p><br>
-
-    <p>
-        We offer the same range of repairs and services as authorized luxury car dealerships, but with added advantages
-        such as affordable pricing, flexible scheduling, and a customer-focused approach. We are not just an
-        alternative—we are the preferred service center for luxury car repair and maintenance in the UAE.
-    </p><br>
-
-    <p>
-        With more than 18 years of combined dealership experience, our expert team is equipped to handle everything from
-        routine maintenance to complex engine repairs. Whether your vehicle is new or old, you can rely on us for
-        high-quality workmanship without the excessive costs typically associated with dealerships.
-    </p><br>
-
-    <p>
-        As a state-of-the-art, independently owned and operated auto repair facility, our workshop functions differently
-        from dealer service centers. This allows us to deliver exceptional expertise and craftsmanship at significantly
-        lower costs—sometimes up to 50% less—without compromising on quality.
-    </p><br>
-
-    <p>
-        To further enhance customer convenience, we have recently launched a mobile application that allows you to
-        schedule vehicle services easily from anywhere.
-    </p><br>
-
-    <p>
-        Our commitment to excellence has been recognized with 5-Star ESMA Certification and ISO Certification,
-        reflecting the high standards and quality of service we consistently deliver.
-    </p>
-</section>
-
-<!-- FACILITIES -->
-<section class="facilities">
-    <h2>Facilities & Service Quality</h2>
-    <p class="subtitle">
-        Delivering premium automotive service with advanced facilities and customer-focused care.
-    </p>
-
-    <div class="facilities-grid">
-        <div class="facility-item">Dedicated engine repair & refurbishment room</div>
-        <div class="facility-item">Brand-specialized certified technicians</div>
-        <div class="facility-item">In-house spare parts department</div>
-        <div class="facility-item">Multi-cultural professional team</div>
-        <div class="facility-item">12-month warranty on labor & parts</div>
-        <div class="facility-item">Advanced CRM for vehicle service history</div>
-        <div class="facility-item">15,000+ spare parts always in stock</div>
-        <div class="facility-item">Intelligent CCTV security system</div>
-        <div class="facility-item">Separate waiting areas for men & ladies</div>
-        <div class="facility-item">AC lounge with free Wi-Fi & TV</div>
-        <div class="facility-item">Free EV charging station</div>
-        <div class="facility-item">Easy and fast access</div>
-    </div>
-</section>
-
-<!-- VISION & MISSION -->
-<section class="vision-mission">
-    <div class="vm-box">
-        <h2>OUR VISION</h2>
-        <ul class="vision-list">
-            <li>AI-driven predictive maintenance</li>
-            <li>AI diagnostics and imaging</li>
-            <li>Telematics and IoT integration</li>
-            <li>Robotics and automation</li>
-            <li>Augmented reality for mechanics</li>
-        </ul>
+    <!-- ABOUT BANNER -->
+    <div class="about-banner">
+        <img src="{% static 'images/about.png' %}" alt="About Elegant Way Auto Maint">
     </div>
 
+    <!-- ABOUT CONTENT -->
+    <section class="about-section">
+        <h2 class="section-title">ABOUT THE COMPANY</h2>
 
-
-    <div class="vm-box">
-        <h2>OUR MISSION</h2>
-        <p>
-            Our mission is to foster a secure, professional, and ethical working environment that empowers our
-            employees, supports our partners, and enables us to consistently deliver high-quality automotive services
-            to customers throughout the UAE and the Middle East.
+        <p class="quote">
+            "Elegant Way Auto Maint Services is a complete solution for all automotive repair and service needs in the UAE."
         </p>
-    </div>
-</section>
 
-<!-- FEATURES -->
-<section class="features">
-    <div class="feature-box">
-        <i class="fa-solid fa-infinity"></i>
-        <h4>EXPERIENCED</h4>
-        <p>Masters of our craft with years of hands-on experience delivering outstanding service.</p>
-    </div>
+        <p>
+            Founded in 2019, Elegant Way Auto Maint Services was created with the goal of delivering a higher standard of vehicle
+            repair and maintenance than traditional car dealerships—while offering services at more competitive and
+            transparent prices.
+        </p>
 
-    <div class="feature-box">
-        <i class="fa-regular fa-sun"></i>
-        <h4>HIGHLY QUALIFIED</h4>
-        <p>Our certified experts value your vehicle and focus on every detail for guaranteed satisfaction.</p>
-    </div>
+        <p>
+            Today, we operate branches exclusively in Sharjah, ensuring convenient and reliable vehicle servicing for our customers.
+            We are actively planning further expansion across the GCC.
+        </p>
 
-    <div class="feature-box">
-        <i class="fa-solid fa-glasses"></i>
-        <h4>CREDIBLE</h4>
-        <p>We deliver our services with honesty, transparency, and respect.</p>
-    </div>
+        <p>
+            We offer the same range of repairs and services as authorized luxury car dealerships, but with added advantages
+            such as affordable pricing, flexible scheduling, and a customer-focused approach.
+        </p>
 
-    <div class="feature-box">
-        <i class="fa-solid fa-heart-pulse"></i>
-        <h4>AVAILABILITY</h4>
-        <p>Always responsive and approachable—you will never feel ignored.</p>
-    </div>
+        <p>
+            With more than 18 years of combined dealership experience, our expert team handles everything from
+            routine maintenance to complex engine repairs.
+        </p>
 
-    <div class="feature-box">
-        <i class="fa-solid fa-car"></i>
-        <h4>SERVICE</h4>
-        <p>Premium workmanship combined with courteous and professional customer care.</p>
-    </div>
+        <p>
+            As a state-of-the-art, independently owned facility, we deliver exceptional expertise at significantly
+            lower costs—sometimes up to 50% less—without compromising quality.
+        </p>
 
-    <div class="feature-box">
-        <i class="fa-solid fa-gears"></i>
-        <h4>PROFESSIONALISM</h4>
-        <p>Consistent quality, reliability, and ethical standards in every service.</p>
-    </div>
-</section>
+        <p>
+            We have also launched a mobile application for easy service booking.
+        </p>
 
+        <p>
+            Our excellence is recognized with 5-Star ESMA Certification and ISO Certification.
+        </p>
+    </section>
+
+    <!-- FACILITIES -->
+    <section class="facilities">
+        <h2>Facilities & Service Quality</h2>
+        <p class="subtitle">
+            Delivering premium automotive service with advanced facilities and customer-focused care.
+        </p>
+
+        <div class="facilities-grid">
+            <div class="facility-item">Dedicated engine repair & refurbishment room</div>
+            <div class="facility-item">Brand-specialized certified technicians</div>
+            <div class="facility-item">In-house spare parts department</div>
+            <div class="facility-item">Multi-cultural professional team</div>
+            <div class="facility-item">12-month warranty on labor & parts</div>
+            <div class="facility-item">Advanced CRM for vehicle service history</div>
+            <div class="facility-item">15,000+ spare parts always in stock</div>
+            <div class="facility-item">Intelligent CCTV security system</div>
+            <div class="facility-item">Separate waiting areas for men & ladies</div>
+            <div class="facility-item">AC lounge with free Wi-Fi & TV</div>
+            <div class="facility-item">Free EV charging station</div>
+            <div class="facility-item">Easy and fast access</div>
+        </div>
+    </section>
+
+    <!-- VISION & MISSION -->
+    <section class="vision-mission">
+        <div class="vm-box">
+            <h2>OUR VISION</h2>
+            <ul class="vision-list">
+                <li>AI-driven predictive maintenance</li>
+                <li>AI diagnostics and imaging</li>
+                <li>Telematics and IoT integration</li>
+                <li>Robotics and automation</li>
+                <li>Augmented reality for mechanics</li>
+            </ul>
+        </div>
+
+        <div class="vm-box">
+            <h2>OUR MISSION</h2>
+            <p>
+                Our mission is to foster a secure, professional, and ethical working environment that empowers our
+                employees and enables us to deliver high-quality automotive services across the UAE and Middle East.
+            </p>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="feature-box">
+            <i class="fa-solid fa-infinity"></i>
+            <h4>EXPERIENCED</h4>
+            <p>Masters of our craft with years of experience.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-regular fa-sun"></i>
+            <h4>HIGHLY QUALIFIED</h4>
+            <p>Certified experts ensuring precision and care.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-solid fa-glasses"></i>
+            <h4>CREDIBLE</h4>
+            <p>Honest, transparent, and trustworthy service.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h4>AVAILABILITY</h4>
+            <p>Always responsive and customer-focused.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-solid fa-car"></i>
+            <h4>SERVICE</h4>
+            <p>Premium workmanship with professional care.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-solid fa-gears"></i>
+            <h4>PROFESSIONALISM</h4>
+            <p>Consistent quality and reliability.</p>
+        </div>
+    </section>
+
+</div>
 {% endblock %}

@@ -5,200 +5,212 @@
 
 {% block content %}
 
-    
-    <style>
-        :root {
-            --primary-orange: #FF6B00;
-            --dark-bg: #121212;
-            --card-bg: #1E1E1E;
-            --text-gray: #B0B0B0;
-        }
+<style>
 
-        body {
-            background-color: var(--dark-bg);
-            color: white;
-            font-family: 'Poppins', sans-serif;
-        }
+/* SECTION TITLE */
+.section-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+.section-title h2 {
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-white);
+}
 
-        .section-title h2 {
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+.section-title span {
+    color: var(--primary);
+}
 
-        .section-title span {
-            color: var(--primary-orange);
-        }
-        
+.section-title p {
+    color: var(--gray);
+}
 
-        .section-title .text-muted {
-            color: #ffffff; 
-        }
+/* PACKAGE CARD */
+.package-card {
+    background: var(--soft-black);
+    border: 1px solid #222;
+    border-radius: 20px;
+    padding: 40px 30px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
 
-        .package-subtitle {
-             color: #837272;
-        }
+.package-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 35px rgba(255, 106, 0, 0.25);
+}
 
-        .starting-text {
-            color: #594d4d;
-            font-size: 1rem;
-        }
+/* ICON */
+.package-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
 
+/* TITLE */
+.tier-name {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
 
+/* PRICE */
+.price-tag {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 25px;
+}
 
-        
-        .package-card {
-            background: var(--card-bg);
-            border: 1px solid #333;
-            border-radius: 20px;
-            padding: 40px 30px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-        }
+.starting-text {
+    font-size: 1rem;
+    color: var(--gray);
+}
 
-        .package-card:hover {
-            transform: translateY(-15px);
-            border-color: var(--primary-orange);
-            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.2);
-        }
+/* FEATURES */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
 
-        .package-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+.feature-list li {
+    margin-bottom: 12px;
+    color: #bbb;
+    font-size: 0.95rem;
+}
 
-        .tier-name {
-            font-weight: 700;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
+.feature-list li i {
+    color: var(--primary);
+    margin-right: 10px;
+}
 
-        .price-tag {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-orange);
-            margin-bottom: 25px;
-        }
+/* BUTTON */
+.btn-orange {
+    background-color: var(--primary);
+    color: var(--deep-black);
+    border-radius: 5px;
+    padding: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid var(--primary);
+    transition: 0.3s;
+    width: 100%;
+}
 
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            margin-bottom: 30px;
-        }
+.btn-orange:hover {
+    background-color: transparent;
+    color: var(--primary);
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
+}
 
-        .feature-list li {
-            margin-bottom: 12px;
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
+/* POPULAR BADGE */
+.popular-badge {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: var(--primary);
+    color: #000;
+    padding: 6px 45px;
+    transform: rotate(45deg);
+    font-size: 0.75rem;
+    font-weight: bold;
+}
 
-        .feature-list li i {
-            color: var(--primary-orange);
-            margin-right: 10px;
-        }
+/* GRID SPACING */
+.row {
+    row-gap: 30px;
+}
 
-        
-        .btn-orange {
-            background-color: var(--primary-orange);
-            color: white;
-            border-radius: 50px;
-            padding: 12px 30px;
-            font-weight: 600;
-            text-transform: uppercase;
-            border: none;
-            transition: 0.3s;
-            width: 100%;
-        }
-
-        .btn-orange:hover {
-            background-color: #e66000;
-            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
-            color: white;
-        }
-
-        
-        .popular-badge {
-            position: absolute;
-            top: 20px;
-            right: -35px;
-            background: var(--primary-orange);
-            color: white;
-            padding: 5px 40px;
-            transform: rotate(45deg);
-            font-size: 0.75rem;
-            font-weight: bold;
-        }
-    </style>
-
+</style>
 
 
 <div class="container py-5">
 
+    <!-- TITLE -->
     <div class="section-title">
         <h2>Choose Your <span>Service Package</span></h2>
-        <p class="package-subtitle">Professional care tailored for your vehicle's performance.</p>
-
+        <p>Professional care tailored for your vehicle's performance</p>
     </div>
 
-    <div class="row g-4">
+    <div class="row">
+
+        <!-- BASIC -->
         <div class="col-lg-4 col-md-6">
             <div class="package-card text-center">
                 <div class="package-icon">🥉</div>
                 <h3 class="tier-name">Basic Care</h3>
-                <div class="price-tag">₹2,999 <small class="starting-text" style="font-size: 1rem;">Starting</small></div>
+
+                <div class="price-tag">
+                    ₹2,999 <span class="starting-text">Starting</span>
+                </div>
+
                 <ul class="feature-list">
                     <li><i class="fas fa-check-circle"></i>Engine Oil Change</li>
                     <li><i class="fas fa-check-circle"></i>Oil Filter Replacement</li>
                     <li><i class="fas fa-check-circle"></i>Basic Inspection</li>
                     <li><i class="fas fa-check-circle"></i>Fluid Top-Up</li>
-                    <li><i class="fas fa-check-circle"></i>Basic 25-Point Vehicle Inspection</li>
+                    <li><i class="fas fa-check-circle"></i>25-Point Inspection</li>
                 </ul>
-                <a href="{% url 'home' %}#book-for-appointment"class="btn btn-orange">Book Now</a>
+
+                <a href="{% url 'home' %}#book-for-appointment" class="btn-orange">Book Now</a>
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
-            <div class="package-card text-center" style="border-color: #444;">
-                <div class="package-icon">🥈</div>
-                <h3 class="tier-name">Standard Maintenance</h3>
-                <div class="price-tag">₹5,999 <small class="starting-text" style="font-size: 1rem;">Starting</small></div>
-                <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i>All Basic Care Services</li>
-                    <li><i class="fas fa-check-circle"></i>Brake Inspection & Cleaning</li>
-                    <li><i class="fas fa-check-circle"></i>AC Performance Check</li>
-                    <li><i class="fas fa-check-circle"></i>Computer Diagnostics</li>
-                    <li><i class="fas fa-check-circle"></i>Air Filter Cleaning</li>
-                </ul>
-                <a href="{% url 'home' %}#book-for-appointment"class="btn btn-orange">Book Now</a>
-            </div>
-        </div>
-
+        <!-- STANDARD -->
         <div class="col-lg-4 col-md-6">
             <div class="package-card text-center">
-                <div class="popular-badge">POPULAR</div>
-                <div class="package-icon">🥇</div>
-                <h3 class="tier-name">Premium Full Care</h3>
-                <div class="price-tag">₹9,999 <small class="starting-text" style="font-size: 1rem;">Starting</small></div>
+                <div class="package-icon">🥈</div>
+                <h3 class="tier-name">Standard Maintenance</h3>
+
+                <div class="price-tag">
+                    ₹5,999 <span class="starting-text">Starting</span>
+                </div>
+
                 <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i>All Standard Maintenance Services</li>
-                    <li><i class="fas fa-check-circle"></i>Suspension & Steering Check</li>
-                    <li><i class="fas fa-check-circle"></i>Wheel Alignment & Balancing</li>
-                    <li><i class="fas fa-check-circle"></i>Advanced Engine Scanning</li>
-                    <li><i class="fas fa-check-circle"></i>Interior & Exterior Cleaning</li>
+                    <li><i class="fas fa-check-circle"></i>All Basic Services</li>
+                    <li><i class="fas fa-check-circle"></i>Brake Inspection</li>
+                    <li><i class="fas fa-check-circle"></i>AC Performance Check</li>
+                    <li><i class="fas fa-check-circle"></i>Diagnostics Scan</li>
+                    <li><i class="fas fa-check-circle"></i>Air Filter Cleaning</li>
                 </ul>
-                <a href="{% url 'home' %}#book-for-appointment"class="btn btn-orange">Book Now</a>
+
+                <a href="{% url 'home' %}#book-for-appointment" class="btn-orange">Book Now</a>
             </div>
         </div>
+
+        <!-- PREMIUM -->
+        <div class="col-lg-4 col-md-6">
+            <div class="package-card text-center">
+
+                <div class="popular-badge">POPULAR</div>
+
+                <div class="package-icon">🥇</div>
+                <h3 class="tier-name">Premium Full Care</h3>
+
+                <div class="price-tag">
+                    ₹9,999 <span class="starting-text">Starting</span>
+                </div>
+
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i>All Standard Services</li>
+                    <li><i class="fas fa-check-circle"></i>Suspension Check</li>
+                    <li><i class="fas fa-check-circle"></i>Wheel Alignment</li>
+                    <li><i class="fas fa-check-circle"></i>Advanced Scanning</li>
+                    <li><i class="fas fa-check-circle"></i>Full Cleaning</li>
+                </ul>
+
+                <a href="{% url 'home' %}#book-for-appointment" class="btn-orange">Book Now</a>
+            </div>
+        </div>
+
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 {% endblock %}
