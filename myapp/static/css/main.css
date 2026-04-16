@@ -97,7 +97,7 @@
     font-family: Arial, sans-serif;
 }
 
-/* VIDEO SECTION */
+
 .video-hero {
     position: relative;
     height: 90vh;
@@ -143,6 +143,8 @@
     font-size: 18px;
     margin-bottom: 25px;
 }
+
+
 
 .hero-btn {
     background: #e50914;
